@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
@@ -10,12 +12,12 @@ class DioService {
   DioService(this.dio);
 
   Future<List<User>?> getUser() async {
-		final response = await dio.get('/users?page=2');
-    List<User>? users;
+		final response = await dio.get('/login');
+    List<User>? users = [];
     if (200 == response.statusCode) {
-      users = User.fromJson(response.data) as List<User>;
-      for(var i = 0; i < users.length; i++) {
-        print(users[i].email);
+      final data = jsonDecode(response.data['data']);
+      for (var i in data) {
+        users.add(i);
       }
     }
     return users;

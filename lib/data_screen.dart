@@ -25,7 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     List<User>? users = await _authService.getUser();
     if (users != null) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Login Successfully")));
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text((users[1].id) as String)));
     } else {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Login Failure")));
     }
