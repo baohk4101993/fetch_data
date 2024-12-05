@@ -24,7 +24,7 @@ mixin _$User {
   String get email => throw _privateConstructorUsedError;
   String get first_name => throw _privateConstructorUsedError;
   String get last_name => throw _privateConstructorUsedError;
-  String get avartar => throw _privateConstructorUsedError;
+  String get avatar => throw _privateConstructorUsedError;
 
   /// Serializes this User to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -45,7 +45,7 @@ abstract class $UserCopyWith<$Res> {
       String email,
       String first_name,
       String last_name,
-      String avartar});
+      String avatar});
 }
 
 /// @nodoc
@@ -67,7 +67,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? email = null,
     Object? first_name = null,
     Object? last_name = null,
-    Object? avartar = null,
+    Object? avatar = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -86,9 +86,9 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.last_name
           : last_name // ignore: cast_nullable_to_non_nullable
               as String,
-      avartar: null == avartar
-          ? _value.avartar
-          : avartar // ignore: cast_nullable_to_non_nullable
+      avatar: null == avatar
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -106,7 +106,7 @@ abstract class _$$userImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       String email,
       String first_name,
       String last_name,
-      String avartar});
+      String avatar});
 }
 
 /// @nodoc
@@ -125,7 +125,7 @@ class __$$userImplCopyWithImpl<$Res>
     Object? email = null,
     Object? first_name = null,
     Object? last_name = null,
-    Object? avartar = null,
+    Object? avatar = null,
   }) {
     return _then(_$userImpl(
       id: null == id
@@ -144,9 +144,9 @@ class __$$userImplCopyWithImpl<$Res>
           ? _value.last_name
           : last_name // ignore: cast_nullable_to_non_nullable
               as String,
-      avartar: null == avartar
-          ? _value.avartar
-          : avartar // ignore: cast_nullable_to_non_nullable
+      avatar: null == avatar
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -155,12 +155,12 @@ class __$$userImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$userImpl implements _user {
-  const _$userImpl(
+  _$userImpl(
       {required this.id,
       required this.email,
       required this.first_name,
       required this.last_name,
-      required this.avartar});
+      required this.avatar});
 
   factory _$userImpl.fromJson(Map<String, dynamic> json) =>
       _$$userImplFromJson(json);
@@ -174,11 +174,11 @@ class _$userImpl implements _user {
   @override
   final String last_name;
   @override
-  final String avartar;
+  final String avatar;
 
   @override
   String toString() {
-    return 'User(id: $id, email: $email, first_name: $first_name, last_name: $last_name, avartar: $avartar)';
+    return 'User(id: $id, email: $email, first_name: $first_name, last_name: $last_name, avatar: $avatar)';
   }
 
   @override
@@ -192,13 +192,13 @@ class _$userImpl implements _user {
                 other.first_name == first_name) &&
             (identical(other.last_name, last_name) ||
                 other.last_name == last_name) &&
-            (identical(other.avartar, avartar) || other.avartar == avartar));
+            (identical(other.avatar, avatar) || other.avatar == avatar));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, id, email, first_name, last_name, avartar);
+      Object.hash(runtimeType, id, email, first_name, last_name, avatar);
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.
@@ -217,12 +217,12 @@ class _$userImpl implements _user {
 }
 
 abstract class _user implements User {
-  const factory _user(
+  factory _user(
       {required final int id,
       required final String email,
       required final String first_name,
       required final String last_name,
-      required final String avartar}) = _$userImpl;
+      required final String avatar}) = _$userImpl;
 
   factory _user.fromJson(Map<String, dynamic> json) = _$userImpl.fromJson;
 
@@ -235,7 +235,7 @@ abstract class _user implements User {
   @override
   String get last_name;
   @override
-  String get avartar;
+  String get avatar;
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.
