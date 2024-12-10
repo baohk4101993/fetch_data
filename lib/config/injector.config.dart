@@ -14,6 +14,7 @@ import 'package:injectable/injectable.dart' as _i526;
 
 import '../core/dio_service/dio_service.dart' as _i282;
 import '../core/network/dio_client.dart' as _i393;
+import '../repository/user_repository.dart' as _i1036;
 import 'config.dart' as _i574;
 
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -31,6 +32,8 @@ _i174.GetIt $initGetIt(
   gh.factory<_i574.IConfig>(() => _i574.AppConfig());
   gh.singleton<_i361.Dio>(() => dioProvider.dio(gh<_i574.IConfig>()));
   gh.singleton<_i282.DioService>(() => _i282.DioService(gh<_i361.Dio>()));
+  gh.singleton<_i1036.UserRepository>(
+      () => _i1036.UserRepository(gh<_i282.DioService>()));
   return getIt;
 }
 

@@ -5,16 +5,17 @@ import 'package:fetch_data/model/apiresponse.dart';
 import 'package:fetch_data/model/resource/result.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/http.dart';
+part 'dio_service.g.dart';
 
-import '../../model/user.dart';
 
 @RestApi()
 @singleton
-class DioService {
-  final Dio dio;
+abstract class DioService {
 
-  DioService(this.dio);
+	@factoryMethod
+  factory DioService(Dio dio) = _DioService;
+
 	@GET("/users?page=2")
-  Future<ApiResponse> fecthData();
+  Future<ApiResponse> fetchData();
 
 }
