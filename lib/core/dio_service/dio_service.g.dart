@@ -12,14 +12,14 @@ class _DioService implements DioService {
   _DioService(
     this._dio, {
     this.baseUrl,
-    this.errorLogger,
+    // this.errorLogger,
   });
 
   final Dio _dio;
 
   String? baseUrl;
 
-  final ParseErrorLogger? errorLogger;
+  // final ParseErrorLogger? errorLogger;
 
   @override
   Future<ApiResponse> fetchData() async {
@@ -48,7 +48,7 @@ class _DioService implements DioService {
     try {
       _value = ApiResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
+      // errorLogger?.logError(e, s, _options);
       rethrow;
     }
     return _value;

@@ -30,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
     List<User>? users;
     Result<ApiResponse> result = (await _userRepository.getFetchDataUser());
     if (result is Success) {
-      users = User.fromJson(result) as List<User>;
+      // users = User.fromJson(result) as List<User>;
 
     }
     if (users != null) {
