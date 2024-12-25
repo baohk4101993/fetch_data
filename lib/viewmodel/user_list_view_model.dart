@@ -7,18 +7,18 @@ import 'package:get_it/get_it.dart';
 import '../model/apiresponse.dart';
 
 class UserListViewModel extends ChangeNotifier {
+
   late List<User> users;
 
-  Future<List<User>> fetchUser() async {
+  Future<void> fetchUser() async {
     final userRepository = GetIt.instance<UserRepository>();
     final result = await userRepository.getFetchDataUser();
     if (result is Success<ApiResponse>) {
-      return result.data.data; // Return user list
+      users = result.data.data;
     } else if (result is Error<ApiResponse>) {
       print("Error: ${result.exception}");
-      return [];
     }
-    return [];
+		notifyListeners();
 	}
 
 }
