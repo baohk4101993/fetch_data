@@ -8,7 +8,7 @@ import '../model/apiresponse.dart';
 
 class UserListViewModel extends ChangeNotifier {
 
-  late List<User> users;
+  List<User> users = [];
 
   Future<void> fetchUser() async {
     final userRepository = GetIt.instance<UserRepository>();

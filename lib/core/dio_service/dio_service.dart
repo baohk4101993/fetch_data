@@ -18,4 +18,7 @@ abstract class DioService {
 	@GET("/users?page=2")
   Future<ApiResponse> fetchData();
 
+  @POST("/login")
+  Future<bool> login();
+
 }

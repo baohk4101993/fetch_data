@@ -1,7 +1,9 @@
 import 'package:fetch_data/config/injector.dart';
 import 'package:fetch_data/data_screen.dart';
 import 'package:fetch_data/user_list.dart';
+import 'package:fetch_data/viewmodel/user_list_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,9 +16,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: "Flutter Login App",
-			home: UserListScreenState(),
+    return MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+              create: (_) => UserListViewModel()
+          ),
+        ],
+      	child: MaterialApp(
+    			title: 'User Fetch App',
+    			home: UserListScreenState(),
+        )
     );
   }
 }
