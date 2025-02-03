@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:fetch_data/model/apiresponse.dart';
+import 'package:fetch_data/model/login_response_model.dart';
 import 'package:fetch_data/model/resource/result.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/http.dart';
@@ -19,6 +20,6 @@ abstract class DioService {
   Future<ApiResponse> fetchData();
 
   @POST("/login")
-  Future<bool> login();
+  Future<LoginResponseModel> login();
 
 }

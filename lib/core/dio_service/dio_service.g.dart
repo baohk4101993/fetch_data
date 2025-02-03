@@ -12,14 +12,14 @@ class _DioService implements DioService {
   _DioService(
     this._dio, {
     this.baseUrl,
-    this.errorLogger,
+    // this.errorLogger,
   });
 
   final Dio _dio;
 
   String? baseUrl;
 
-  final ParseErrorLogger? errorLogger;
+  // final ParseErrorLogger? errorLogger;
 
   @override
   Future<ApiResponse> fetchData() async {
@@ -48,19 +48,19 @@ class _DioService implements DioService {
     try {
       _value = ApiResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
+      // errorLogger?.logError(e, s, _options);
       rethrow;
     }
     return _value;
   }
 
   @override
-  Future<bool> login() async {
+  Future<LoginResponseModel> login() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<bool>(Options(
+    final _options = _setStreamType<LoginResponseModel>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -76,12 +76,12 @@ class _DioService implements DioService {
           _dio.options.baseUrl,
           baseUrl,
         )));
-    final _result = await _dio.fetch<bool>(_options);
-    late bool _value;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late LoginResponseModel _value;
     try {
-      _value = _result.data!;
+      _value = LoginResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
+      // errorLogger?.logError(e, s, _options);
       rethrow;
     }
     return _value;
