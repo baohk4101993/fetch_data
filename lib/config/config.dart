@@ -8,5 +8,5 @@ abstract class IConfig {
 class AppConfig extends IConfig {
   @override
   // TODO: implement baseUrl
-  String get baseUrl => "https://reqres.in/api";
+  String get baseUrl => "https://reqres.in";
 }

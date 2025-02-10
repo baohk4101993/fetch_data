@@ -34,7 +34,7 @@ class _DioService implements DioService {
     )
         .compose(
           _dio.options,
-          '/users?page=2',
+          '/api/users?page=2',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -67,7 +67,7 @@ class _DioService implements DioService {
     )
         .compose(
           _dio.options,
-          '/login',
+          '/api/login',
           queryParameters: queryParameters,
           data: _data,
         )
